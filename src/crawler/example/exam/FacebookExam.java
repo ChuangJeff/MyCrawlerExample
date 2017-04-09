@@ -23,10 +23,10 @@ public class FacebookExam {
 		
 		// 遠端資料路徑
 
-		String uri = 
-				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
+		String uri =
+				"https://graph.facebook.com/v2.4"
+						+ "/aMEI.feat.AMIT/feed?fields=id,link,message,created_time,likes.limit(0).summary(total_count),reactions.limit(0).summary(total_count)"
+						+ "&access_token=202862803540706%7cIeongWKlJHXREZwyaDo7ZxF8KWU";
 
 
 		Elements elems =
@@ -41,8 +41,7 @@ public class FacebookExam {
 			String id = data.select("id").text();
 
 			// FIXIT
-			String reactions = "";
-
+			String reactions =data.select( "reactions").text();
 
 			output += id + "," + reactions + "\n";
 		}
